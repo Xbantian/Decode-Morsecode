@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/decodeMorse.js"></script>
+    <title>Decode Morse</title>
+    <script type="text/script">
+    </script>
+
+    <style>
+    body{
+        padding: 10;
+        margin: 10;
+        }
+        .ullist{
+            position: fixed;
+            float: right;
+            list-style: none;
+            top: 35%;
+            z-index: 99;
+            /*margin-left:780px */
+        }
+        .ullist li{
+            margin-top: 10px;
+        }
+        .visualPart{
+            height: 600px;
+            margin: 10px 100px 10px 150px;
+        }
+        .textPart{
+            width: 100%;
+            height: 300px;
+            font-size: 20px;
+            float: left;
+        }
+        .tipDiv{
+            text-align: center;
+            /*margin: 10px;*/
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <ul class="ullist">
+        <li><button id="decodeMorse" onclick="DecodeMorse()">DecodeMorse</button></li>
+        <li><button onclick="DecodeMorse(1)">过滤部分组合</button></li>
+        <!-- <li><button id="changeModel" onclick="DecodeMorse(1)">解析模式</button></li> -->
+    </ul>
+
+
+    <div class="visualPart">
+    <a target="Html to" href="http://www.baidu.com">target test</a>
+    <span>Decode Morse</span>
+        <textarea class="textPart"  id="sourceText" placeholder="输入二进制文档，计算可能的摩斯码组合"></textarea>
+        <div class="tipDiv">
+            <span>直接结果↓ <span id="wordCount" >0</span>条记录</span>
+        </div>
+        <textarea class="textPart" id="processedText"></textarea>
+        <!-- <div style="width:400px;height:400px;"> -->
+    </div>
+</body>
+</html>
