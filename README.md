@@ -1,4 +1,2 @@
-# test-1
-
-
-解析一段二进制的任意摩斯码组合（目前全是字母）
+# Decode binary string to Morse code
+解析一段二进制字符的所有摩斯码组合
