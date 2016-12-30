@@ -26,7 +26,7 @@
         }
         .visualPart{
             height: 600px;
-            margin: 10px 100px 10px 150px;
+            margin: 50px 100px 10px 150px;
         }
         .textPart{
             width: 100%;
@@ -36,7 +36,10 @@
         }
         .tipDiv{
             text-align: center;
-            /*margin: 10px;*/
+            margin: 10px;
+        }
+        .clearFloat{
+            clear: both;
         }
 
     </style>
@@ -53,13 +56,14 @@
 
 
     <div class="visualPart">
-    <a target="Html to" href="http://www.baidu.com">target test</a>
-    <span>Decode Morse</span>
-        <textarea class="textPart"  id="sourceText" placeholder="输入二进制文档，计算可能的摩斯码组合"></textarea>
-        <div class="tipDiv">
-            <span>直接结果↓ <span id="wordCount" >0</span>条记录</span>
-        </div>
-        <textarea class="textPart" id="processedText"></textarea>
+        <a target="Html to" href="http://www.atool.org/morse.php">Decode Morse</a>
+        <!-- <span>Decode Morse</span> -->
+            <textarea class="textPart"  id="sourceText" placeholder="输入二进制文档，计算可能的摩斯码组合"></textarea>
+            <div class="clearFloat"></div>
+            <div class="tipDiv">
+                <span>直接结果↓ <span id="wordCount" >0</span>条记录</span>
+            </div>
+            <textarea class="textPart" id="processedText"></textarea>
         <!-- <div style="width:400px;height:400px;"> -->
     </div>
 </body>
