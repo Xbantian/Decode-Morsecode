@@ -1,2 +1,2 @@
-# Decode binary string to Morse code
+# 反解析摩斯码
 解析一段二进制字符的所有摩斯码组合
