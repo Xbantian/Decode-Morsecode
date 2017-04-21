@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
-    <script type="text/javascript" src="js/decodeMorse.js"></script>
     <title>Decode Morse</title>
     <script type="text/script">
     </script>
@@ -41,7 +39,6 @@
         .clearFloat{
             clear: both;
         }
-
     </style>
 
 </head>
@@ -49,11 +46,10 @@
 <body>
 
     <ul class="ullist">
-        <li><button id="decodeMorse" onclick="DecodeMorse()">DecodeMorse</button></li>
-        <li><button onclick="DecodeMorse(1)">过滤部分组合</button></li>
+        <li><button id="decodeMorse">DecodeMorse</button></li>
+        <li><button id="decodeMorse1" >过滤部分组合</button></li>
         <!-- <li><button id="changeModel" onclick="DecodeMorse(1)">解析模式</button></li> -->
     </ul>
-
 
     <div class="visualPart">
         <a target="Html to" href="http://www.atool.org/morse.php">Decode Morse</a>
@@ -65,6 +61,8 @@
             </div>
             <textarea class="textPart" id="processedText"></textarea>
         <!-- <div style="width:400px;height:400px;"> -->
+
     </div>
+    <script src="./public/bundle.js" type="text/javascript" ></script>
 </body>
 </html>

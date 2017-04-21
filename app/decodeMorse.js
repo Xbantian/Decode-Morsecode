@@ -1,55 +1,70 @@
+'use strict';
+// import wordPath from 
+
+// // export default function () {
+// //   console.log('foo');
+// // }
+// var fs = require('fs');
+// import fs 
+
+// // Returns the path to the word list which is separated by `\n`
+// const wordListPath = require('word-list');
+
+// const wordArray = fs.readFileSync(wordListPath, 'utf8').split('\n');
+// //=> […, 'abmhos', 'abnegate', …]
+var wordPath = require('word-list');
+// import wordArray from wordPath;
+console.log(wordPath);
+// let wordArray=[];
+
+// var xhr = new XMLHttpRequest();
+// xhr.open('GET', '../node_modules/word-list'+wordPath,false);
+// xhr.send();
+// xhr.onreadystatechange=function() {
+    
+//     if (xhr.readyState == 4 && xhr.status == 200) {
+//         if (xhr.response.indexOf("stopSend") != -1) {
+//         	 wordArray=xhr.responseText.split('\n');
+//         	 console.log(wordArray);
+//         }
+//     }
+// }
+
+
+// console.log(s);
+
+
+// var wordArray = require(wordPath);
+
+var reader = new FileReader();
+
 var EC = function(data) {
 	//EC:EscapeCharacter
 	return data.replace(/\./g, '\\\.');
 }
-//结果数组
-var res = [];
-
-//按钮绑定事件
-var DecodeMorse = function(model) {
-	$("#processedText").val('');
-	$("#wordCount").html(0);
-
-	res = [];
-	var sourceText = $("#sourceText").val();
-	sourceText = sourceText.trim();
-
-	var res1 = changeChart(sourceText);
-	if (!res1) {
-		$("#processedText").val("请确保只输入了两种字符");
-		return;
-	}
-	var c1 = res1.chart1;
-	var c2 = res1.chart2;
-	res1 = res1.sourceText;
-
-	Decode(res1);
-
-	if (model == 1) { //过滤部分字符
-		res = wordFilter(res);
-	}
-
-
-	$("#wordCount").html(res.length);
-	$("#processedText").val(res.join('\n'));
-}
 
 //试图过滤部分不正常的结果
 var wordFilter = function(data) {
-	data = data.filter(function(item, index) {
-		var pa = new RegExp('(\.)(\\1){2,}');
-		if (index == 1) {
-			//console.log(pa)
-		}
-		if (!pa.test(item)) {
+	// data = data.filter(function(item, index) {
+	// 	var pa = new RegExp('(\.)(\\1){2,}');
+	// 	if (index == 1) {
+	// 		//console.log(pa)
+	// 	}
+	// 	if (!pa.test(item)) {
+	// 		return true;
+	// 	} else {
+	// 		console.log(item);
+	// 	}
+	// }); //过滤掉有三个+重复字母的
+
+	// return data;
+	return data.filter(function (item,inde) {
+		if (wordArray[item]) {
 			return true;
-		} else {
+		}else{
 			console.log(item);
 		}
-	}); //过滤掉有三个+重复字母的
-
-	return data;
-
+	})
 
 	//  var url='https://www.baidu.com'
 	// //var url='http://fanyi.youdao.com/translate'
@@ -114,7 +129,7 @@ var changeChart = function(data) {
 }
 
 //递归算法
-var Decode = function(data, data1) {
+var calDecode = function(data, data1) {
 	//var remain=data
 	if (data1 == undefined) {
 		data1 = '';
@@ -131,7 +146,7 @@ var Decode = function(data, data1) {
 		if (pData && pData != remain) { //如果存在且未结束
 			preRes += codeList[i].letter;
 
-			Decode(pData, preRes);
+			calDecode(pData, preRes);
 		}
 		if (!pData) { //完美结束
 			res.push(preRes + codeList[i].letter);
@@ -139,15 +154,14 @@ var Decode = function(data, data1) {
 		}
 	}
 }
+var res=[];
+function Decode(data) {
+	res=[];
+	calDecode(data);
+	return wordFilter(res);
+}
 
-//绑定回车键
-$(function() {
-	$(document).keydown(function(event) {
-		if (event.keyCode == 13) {
-			DecodeMorse();
-		}
-	});
-});
+
 
 //摩斯码枚举
 var codeList=[
@@ -177,4 +191,12 @@ var codeList=[
 		{letter:'x',mCode:'-..-'},
 		{letter:'y',mCode:'-.--'},
 		{letter:'z',mCode:'--..'},
-	];
+];
+
+var outputObj={
+	wordFilter:wordFilter,
+	changeChart:changeChart,
+	Decode:Decode
+}
+
+ export default outputObj;

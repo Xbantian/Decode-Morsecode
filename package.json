@@ -1,0 +1,30 @@
+{
+  "name": "decode-morsecode",
+  "version": "1.0.0",
+  "description": "解析一段二进制字符的所有摩斯码组合",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server",
+    "build": "npm run clear && webpack",
+    "clear": "rd /s /q public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xbantian/test-1.git"
+  },
+  "author": "Xbantian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xbantian/test-1/issues"
+  },
+  "homepage": "https://github.com/Xbantian/test-1#readme",
+  "devDependencies": {
+    "file-loader": "^0.11.1",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "word-list": "^2.0.0"
+  }
+}
