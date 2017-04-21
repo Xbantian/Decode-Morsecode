@@ -1,8 +1,7 @@
 'use strict';
 import  DM from './decodeMorse';
 
-console.log('(╯°Д°)╯︵ ┻━┻ ');
-
+//.--......-.. ..... -..... ......-.-.- ..-..
 var DecodeMorse = function(event) {
 	var model=event.currentTarget.id==="decodeMorse"?0:1;
 

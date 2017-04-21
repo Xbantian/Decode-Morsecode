@@ -1,20 +1,12 @@
 'use strict';
-// import wordPath from 
 
-// // export default function () {
-// //   console.log('foo');
-// // }
-// var fs = require('fs');
-// import fs 
-
-// // Returns the path to the word list which is separated by `\n`
-// const wordListPath = require('word-list');
-
-// const wordArray = fs.readFileSync(wordListPath, 'utf8').split('\n');
-// //=> […, 'abmhos', 'abnegate', …]
-var wordPath = require('word-list');
+import  wordList from './words.txt';
+var wordArray=wordList.split('\n');
+// console.log(typeof xx);
+// console.log(wordArray);
 // import wordArray from wordPath;
-console.log(wordPath);
+// console.log(wordPath);
+
 // let wordArray=[];
 
 // var xhr = new XMLHttpRequest();
@@ -59,7 +51,7 @@ var wordFilter = function(data) {
 
 	// return data;
 	return data.filter(function (item,inde) {
-		if (wordArray[item]) {
+		if (wordArray.indexOf(item)!==-1) {
 			return true;
 		}else{
 			console.log(item);
