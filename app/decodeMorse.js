@@ -150,7 +150,7 @@ var res=[];
 function Decode(data) {
 	res=[];
 	calDecode(data);
-	return wordFilter(res);
+	return res;
 }
 
 

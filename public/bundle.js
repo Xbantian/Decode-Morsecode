@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "920404ec955a00bc58bd"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4059a2961463179230bb"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -715,23 +715,8 @@
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__words_txt__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__words_txt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__words_txt__);
 
-// import wordPath from 
 
-// // export default function () {
-// //   console.log('foo');
-// // }
-// var fs = require('fs');
-// import fs 
 
-// // Returns the path to the word list which is separated by `\n`
-// const wordListPath = require('word-list');
-
-// const wordArray = fs.readFileSync(wordListPath, 'utf8').split('\n');
-// //=> […, 'abmhos', 'abnegate', …]
-// var wordPath = require('word-list');
-
-// var wordArray = require('./words.txt');
-// var wordArray = require('./test.txt');
 var wordArray=__WEBPACK_IMPORTED_MODULE_0__words_txt___default.a.split('\n');
 // console.log(typeof xx);
 // console.log(wordArray);
@@ -754,7 +739,7 @@ var wordArray=__WEBPACK_IMPORTED_MODULE_0__words_txt___default.a.split('\n');
 // }
 
 
-// console.log(s);
+//  console.log(s);
 
 
 // var wordArray = require(wordPath);
@@ -881,7 +866,7 @@ var res=[];
 function Decode(data) {
 	res=[];
 	calDecode(data);
-	return wordFilter(res);
+	return res;
 }
 
 
@@ -934,9 +919,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-
+//.--......-.. ..... -..... ......-.-.- ..-..
 var DecodeMorse = function(event) {
-	var model=event.currentTarget.id==="decodeMorse"?0:1;
+	var model=event&&event.currentTarget.id==="decodeMorse"?0:1;
 
 	var processedTextCon = document.getElementById("processedText");
 	var wordCount = document.getElementById("wordCount");
@@ -966,6 +951,8 @@ var DecodeMorse = function(event) {
 }
 
 window.onload=function () {
+	console.log('(╯°Д°)╯︵ ┻━┻ ');
+	console.log('(╯°Д°)╯︵ ┻━┻ ');
 	//绑定回车键
 	document.addEventListener('keydown',function (event) {
 		if (event.keyCode ==13) {

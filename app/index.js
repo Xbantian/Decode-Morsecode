@@ -3,7 +3,7 @@ import  DM from './decodeMorse';
 
 //.--......-.. ..... -..... ......-.-.- ..-..
 var DecodeMorse = function(event) {
-	var model=event.currentTarget.id==="decodeMorse"?0:1;
+	var model=event&&event.currentTarget.id==="decodeMorse"?0:1;
 
 	var processedTextCon = document.getElementById("processedText");
 	var wordCount = document.getElementById("wordCount");
@@ -33,6 +33,7 @@ var DecodeMorse = function(event) {
 }
 
 window.onload=function () {
+	console.log('(╯°Д°)╯︵ ┻━┻ ');
 	//绑定回车键
 	document.addEventListener('keydown',function (event) {
 		if (event.keyCode ==13) {
