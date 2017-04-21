@@ -23,7 +23,7 @@ var wordArray=wordList.split('\n');
 // }
 
 
-// console.log(s);
+//  console.log(s);
 
 
 // var wordArray = require(wordPath);
